@@ -52,12 +52,12 @@ namespace WebScrapper
                     description = "Unable to parse description for this page.";
                 }
 
-                pageDetails.title = htmlNode.OwnerDocument.DocumentNode.SelectNodes("//html/head/title")[0].InnerText;
-                pageDetails.description = description;
-                pageDetails.url = url;
+                pageDetails.Title = htmlNode.OwnerDocument.DocumentNode.SelectNodes("//html/head/title")[0].InnerText;
+                pageDetails.Description = description;
+                pageDetails.Url = url;
 
-                var searchTermInTitle = pageDetails.title.ToLower().Contains(searchTerm.ToLower());
-                var searchTermInDescription = pageDetails.description.ToLower().Contains(searchTerm.ToLower());
+                var searchTermInTitle = pageDetails.Title.ToLower().Contains(searchTerm.ToLower());
+                var searchTermInDescription = pageDetails.Description.ToLower().Contains(searchTerm.ToLower());
 
                 if (searchTermInTitle || searchTermInDescription)
                 {

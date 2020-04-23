@@ -6,7 +6,7 @@ namespace WebScrapper
     {
         static void Main()
         {
-            var mainPageLinks = ScrapingMethods.GetMainPageLinks("https://habr.com");
+            var mainPageLinks = ScrapingMethods.GetMainPageLinks("https://medium.com/");
             Console.WriteLine("Please enter a search term:");
             var searchTerm = Console.ReadLine();
             Console.WriteLine();
@@ -18,9 +18,9 @@ namespace WebScrapper
             foreach (var pageDetail in pageDetails)
             {
                 Console.WriteLine($"Page number {pageNumber++}:");
-                Console.WriteLine($"Page title: {pageDetail.title}");
-                Console.WriteLine($"Page description: {pageDetail.description}");
-                Console.WriteLine($"Page URL: {pageDetail.url}");
+                Console.WriteLine($"Page title: {pageDetail.Title}");
+                Console.WriteLine($"Page description: {pageDetail.Description}");
+                Console.WriteLine($"Page URL: {pageDetail.Url}");
                 Console.WriteLine();
             }
 
